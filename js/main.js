@@ -86,6 +86,8 @@ initMap = () => {
     id: 'mapbox.streets'
   }).addTo(newMap);
 
+  document.getElementById('map').setAttribute('tabindex', '-1')
+
   updateRestaurants();
 }
 /* window.initMap = () => {
@@ -161,6 +163,7 @@ createRestaurantHTML = (restaurant) => {
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.alt = 'Picture of the restaurant ' + restaurant.name;
   li.append(image);
 
   const name = document.createElement('h1');
